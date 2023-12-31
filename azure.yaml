@@ -1,4 +1,4 @@
-name: full-stack-app-demo
+name: flask-webapp-mysql-db
 services:
   web:
     project: .

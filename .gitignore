@@ -31,3 +31,4 @@ package.json
 
 env_variables.yaml
 gcp.env
+.azure

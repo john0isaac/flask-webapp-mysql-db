@@ -1,8 +1,15 @@
-# flask-webapp-mysql-db
+# Fyyur App
 
-Artists Booking Venues powered by Python (Flask) and MySQL Database
+Artists Booking Venues powered by Python (Flask) and MySQL Database.
+There is no user authentication or per-user data stored.
 
-## Development Setup
+![Thumbnail](./repo-thumbnail.png)
+
+The project is designed for deployment on Azure App Service with a MySQL flexible server. See deployment instructions below.
+
+![Architecture Diagram](./architecture-diagram.png)
+
+## Local Development
 
 1. **Download the project starter code locally**
 
@@ -11,23 +18,7 @@ Artists Booking Venues powered by Python (Flask) and MySQL Database
   cd flask-webapp-mysql-db
   ```
 
-2.**Before and After editing your code, Use the commands below:**
-
-before editing anything pull new changes from GitHub.
-
-```bash
-git pull
-```
-
-Once you are done editing, you can push the local repository to your Github account using the following commands.
-
-```bash
-git add .
-git commit -m "your comment message"
-git push
-```
-
-3.**Initialize and activate a virtualenv using:**
+2.**Initialize and activate a virtualenv using:**
 
 ```bash
 python -m virtualenv venv
@@ -41,13 +32,13 @@ source venv/Scripts/activate
 deactivate
 ```
 
-4.**Install the dependencies:**
+3.**Install the dependencies:**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-5.**Run the development server:**
+4.**Run the development server:**
 
 ```bash
 export FLASK_APP=app.py
@@ -56,93 +47,40 @@ export FLASK_DEBUG=true
 flask run --reload
 ```
 
-6.**Verify on the Browser**
+5.**Verify on the Browser**
 
 Navigate to project homepage [http://127.0.0.1:5000/](http://127.0.0.1:5000/) or [http://localhost:5000](http://localhost:5000)
 
-## Adding Routes
+## Deployment
 
-- Create the html, css, js in the specified folder using the same folder structure.
-- Create a new route in the [app.py](./app.py) file with the name you want using only dashes to separate words.
+This repository is set up for deployment on Azure App Service (w/MySQL flexible server) using the configuration files in the `infra` folder.
 
-```PYTHON
-@app.route('NEW-ROUTE')
-```
+To deploy your own instance, follow these steps:
 
-- Define your serving function using a unique name not used before in the whole application.
+1. Sign up for a [free Azure account](https://azure.microsoft.com/free/)
 
-```PYTHON
-def NEW_UNIQUE_NAME():
-```
+2. Install the [Azure Dev CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd). (If you open this repository in Codespaces or with the VS Code Dev Containers extension, that part will be done for you.)
 
-- Return your html file path using render_template.
+3. Initialize a new `azd` environment:
 
-```PYTHON
-return render_template('FOLDER_PATH/FILE_PATH.html')
-```
+    ```shell
+    azd init
+    ```
 
-- Your newly created route should look like this.
+    It will prompt you to provide a name (like "flask-app") that will later be used in the name of the deployed resources.
 
-```PYTHON
-@app.route('NEW-ROUTE')
-def NEW_UNIQUE_NAME():
-    return render_template('FOLDER_PATH/FILE_PATH.html')
-```
+4. Provision and deploy all the resources:
 
-## Deploying to Google Cloud
+    ```shell
+    azd up
+    ```
 
-1. Open the Google Cloud Shell and execute the following command:
+    It will prompt you to login, pick a subscription, and provide a location (like "eastus"). Then it will provision the resources in your account and deploy the latest code. If you get an error with deployment, changing the location (like to "centralus") can help, as there may be availability constraints for some of the resources.
 
-  ```shell
-  git clone https://github.com/john0isaac/flask-webapp-mysql-db.git
-  cd flask-webapp-mysql-db
-  ```
+5. When azd has finished deploying, you'll see an endpoint URI in the command output. Visit that URI to browse the app! 🎉
 
-2.Create the env_variables.yaml file that contains your secret environment variables.
+6. If you make any changes to the app code, you can just run this command to redeploy it:
 
-  ```shell
-  nano env_variables.yaml
-  ```
-
-3.Add your Google Cloud SQL database connection details
-
-```shell
-env_variables:
-  DB_USER_NAME: 'secret'
-  DB_PASSWORD: 'secret'
-  DB_NAME: 'secret'
-  DB_HOST: '111.111.111.111'
-  DB_PORT: '5432'
-  DB_CONNECTOR: 'mysql+mysqlconnector'
-  INSTANCE_UNIX_SOCKET: '/cloudsql/Connection name'
-  DEPLOYMENT_LOCATION: 'gcp'
-```
-
-4.save and exit the file CTRL+x followed by y followed by Enter.
-
-5.Deploy the web application.
-
-  ```shell
-  gcloud app deploy app.yaml
-  ```
-
-## Deploying After Deleting Everything from Google Cloud
-
-1. Create a Cloud SQL instance using the following parameters:
-    - Specify instance name and password.
-    - Select production instead of production plus.
-    - Select Single Zone.
-    - Specify the machine configuration of 2 vCPUs and 8 GB Memory.
-    - Select the smallest storage option available 10 GB.
-    - Add your IP to the Instance Network.
-    - Select Create.
-    - Create a database and call it fyyur.
-    - Create a user and call it john.
-    - Grant All privileges to user john.
-
-2. Import Data dump.
-3. Pull the code to the Cloud Shell.
-4. Create environment variables .yaml file.
-5. Enable App Engine.
-6. execute the following command `gcloud beta app repair`.
-7. execute the following command `gcloud app deploy --no-cache`.
+    ```shell
+    azd deploy
+    ```
