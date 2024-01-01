@@ -7,7 +7,7 @@
     "hostRequirements": {
         "cpus": 2,
         "memory": "8gb",
-        "storage": "20gb"
+        "storage": "32gb"
     },
     "waitFor": "onCreateCommand",
     "updateContentCommand": "python3 -m pip install -r requirements.txt",
