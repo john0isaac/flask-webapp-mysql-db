@@ -2,7 +2,7 @@
 // https://github.com/github/codespaces-jupyter
 
 {
-    "name" : "",
+    "name" : "Flask with MySQL",
     "image": "mcr.microsoft.com/devcontainers/universal:2",
     "hostRequirements": {
         "cpus": 2,
