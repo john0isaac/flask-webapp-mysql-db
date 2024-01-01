@@ -1,4 +1,4 @@
-# Fyyur App
+# Python (Flask) Web App with MySQL and Key Vault
 
 Artists Booking Venues powered by Python (Flask) and MySQL Database.
 There is no user authentication or per-user data stored.
@@ -6,6 +6,8 @@ There is no user authentication or per-user data stored.
 ![Screenshot of website landing page](./repo-thumbnail.png)
 
 The project is designed for deployment on Azure App Service with a MySQL flexible server. See deployment instructions below.
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/john0isaac/flask-webapp-mysql-db?devcontainer_path=.devcontainer/devcontainer.json)
 
 ![Architecture Diagram: App Service, MySQL server, Key Vault](./architecture-diagram.png)
 
