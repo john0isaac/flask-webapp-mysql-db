@@ -20,9 +20,10 @@ The project is designed for deployment on Azure App Service with a MySQL flexibl
     cd flask-webapp-mysql-db
     ```
 
-2. **Initialize and activate a virtualenv using:**
+2. **Install, initialize and activate a virtualenv using:**
 
     ```bash
+    pip install virtualenv
     python -m virtualenv venv
     source venv/bin/activate
     ```
@@ -30,8 +31,7 @@ The project is designed for deployment on Azure App Service with a MySQL flexibl
     >**Note** - In Windows, the `venv` does not have a `bin` directory. Therefore, you'd use the analogous command shown below:
 
     ```bash
-    source venv/Scripts/activate
-    deactivate
+    source venv\Scripts\activate
     ```
 
 3. **Install the dependencies:**
@@ -48,8 +48,15 @@ The project is designed for deployment on Azure App Service with a MySQL flexibl
     export FLASK_DEBUG=true
     flask run --reload
     ```
-
-5. **Verify on the Browser**
+    **For Windows, use [`setx`](https://learn.microsoft.com/windows-server/administration/windows-commands/setx) command shown below:**
+   ```powershell
+    setx FLASK_APP=app.py
+    setx FLASK_ENV=development
+    setx FLASK_DEBUG=true
+    flask run --reload
+    ```
+   
+6. **Verify on the Browser**
 
 Navigate to project homepage [http://127.0.0.1:5000/](http://127.0.0.1:5000/) or [http://localhost:5000](http://localhost:5000)
 
