@@ -48,17 +48,45 @@ The project is designed for deployment on Azure App Service with a MySQL flexibl
     export FLASK_DEBUG=true
     flask run --reload
     ```
+
     **For Windows, use [`setx`](https://learn.microsoft.com/windows-server/administration/windows-commands/setx) command shown below:**
+
    ```powershell
-    setx FLASK_APP=app.py
-    setx FLASK_ENV=development
-    setx FLASK_DEBUG=true
+    setx FLASK_APP app.py
+    setx FLASK_ENV development
+    setx FLASK_DEBUG true
     flask run --reload
     ```
    
 6. **Verify on the Browser**
 
 Navigate to project homepage [http://127.0.0.1:5000/](http://127.0.0.1:5000/) or [http://localhost:5000](http://localhost:5000)
+
+### Connect to your Database locally
+
+This application is configured to work without connecting a database for the pages that doesn't interact with it. If you want to enable database operations you'll need to connect to a database.
+
+- **Run the following commands to connect to a database:**
+
+    ```bash
+    export DEPLOYMENT_LOCATION=local
+    export DB_USER=
+    export DB_PASSWORD=
+    export DB_HOST=
+    export DB_NAME=
+    ```
+
+- **For windows, add configuration using:**
+
+    ```powershell
+    setx DEPLOYMENT_LOCATION local
+    setx DB_USER user
+    setx DB_PASSWORD password
+    setx DB_HOST host
+    setx DB_NAME dbname
+    ```
+
+- **Run the development server again.**
 
 ## Deployment
 
