@@ -38,6 +38,10 @@ elif os.environ.get('DEPLOYMENT_LOCATION') == 'azure':
     print("Loading environment.azure_production.")
     app.config.from_object('environment.azure_production')
     setup_db(app)
+elif os.environ.get('DEPLOYMENT_LOCATION') == 'local':
+  print("Loading environment.development.")
+  app.config.from_object('environment.development')
+  setup_db(app)
 else:
     print("No environment detected.")
 
