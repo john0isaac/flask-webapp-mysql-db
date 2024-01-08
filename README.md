@@ -101,7 +101,7 @@ To deploy your own instance, follow these steps:
 3. Initialize a new `azd` environment:
 
     ```shell
-    azd init
+    azd init -t john0isaac/flask-webapp-mysql-db
     ```
 
     It will prompt you to provide a name (like "flask-app") that will later be used in the name of the deployed resources.
