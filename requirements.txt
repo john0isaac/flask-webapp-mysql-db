@@ -10,7 +10,6 @@ Jinja2==3.0.3
 Mako==1.2.0
 Markdown==2.6.9
 MarkupSafe==2.0.1
-mysql
 mysql-connector-python
 python-dateutil==2.6.0
 python-dotenv==1.0.0
