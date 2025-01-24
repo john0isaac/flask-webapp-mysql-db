@@ -8,6 +8,7 @@ There is no user authentication or per-user data stored.
 The project is designed for deployment on Azure App Service with a MySQL flexible server. See deployment instructions below.
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/john0isaac/flask-webapp-mysql-db?devcontainer_path=.devcontainer/devcontainer.json)
+[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/john0isaac/flask-webapp-mysql-db/blob/a68651a8140b4b3e9ed090490545464fad6eb957/README.md)
 
 ![Architecture Diagram: App Service, MySQL server, Key Vault](./architecture-diagram.png)
 
