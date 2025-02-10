@@ -7,7 +7,16 @@ There is no user authentication or per-user data stored.
 
 The project is designed for deployment on Azure App Service with a MySQL flexible server. See deployment instructions below.
 
+#### 🌏  Open in Cloud IDEs
+
+Click any of the buttons below to start a new development environment to demo or contribute to the codebase without having to install anything on your machine:
+
+[![Open in Glitch](https://img.shields.io/badge/Open%20in-Glitch-blue?logo=glitch)](https://glitch.com/edit/#!/import/github/john0isaac/flask-webapp-mysql-d)
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/john0isaac/flask-webapp-mysql-db?devcontainer_path=.devcontainer/devcontainer.json)
+[![Edit in Codesandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/john0isaac/flask-webapp-mysql-d)
+[![Open in Repl.it](https://replit.com/badge/github/withastro/astro)](https://replit.com/github/john0isaac/flask-webapp-mysql-d)
+[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/john0isaac/flask-webapp-mysql-d)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/john0isaac/flask-webapp-mysql-d)
 
 ![Architecture Diagram: App Service, MySQL server, Key Vault](./architecture-diagram.png)
 
