@@ -4,3 +4,5 @@ services:
     project: .
     language: py
     host: appservice
+metadata:
+  template: flask-webapp-mysql-db@0.0.1-beta
