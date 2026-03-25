@@ -5,4 +5,4 @@ services:
     language: py
     host: appservice
 metadata:
-  template: flask-webapp-mysql-db@0.0.1-beta
+  template: flask-webapp-mysql-db@1.0.0
